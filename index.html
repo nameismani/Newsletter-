@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="Manikandan B">
+      <meta name="description" content="I took this website template from a Frontend Mentor challenge. For this challenge I used html, tailwindcss and jquery technology.">
+      <!-- displays site properly based on user's device -->
+      <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="./public/css/tailwind.css"> -->
+      <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+      <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+      <style>
+         .attribution { font-size: 11px; text-align: center; }
+         .attribution a { color: hsl(228, 45%, 44%); }
+      </style>
+   </head>
+   <body style="font-family: 'Roboto', sans-serif;">
+      <main class="flex justify-center items-center h-screen w-full bg-clifford ">
+         <!-- md:w-[55%] -->
+         <div class="container bg-white p-0 md:p-5 rounded-3xl relative  md:w-[85%] lg:w-[70%] xl:w-[55%] overflow-hidden transition-width duration-300 newsletter-container  md:h-[547px]"  >
+            <section class="newsletter flex-col md:flex-row flex flex-wrap  transition  duration-1000">
+               <div  class=" ms-auto flex md:hidden w-full" >
+                  <img src="./assets/images/illustration-sign-up-desktop.svg" alt="" class="w-full h-full">
+               </div>
+               <!-- /Sign-up form start -->
+               <div class="w-full md:w-[60%] py-2 md:py-4 xl:py-4 px-10 ">
+                  <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mt-10 md:mt-0">Stay updated!</h1>
+                  <p class="my-5 font-medium text-base">Join 60,000+ product managers receiving monthly updates on:</p>
+                  <!-- <ul class="custom-list" >
+                     <li>  Product discovery and building what matters</li>
+                     <li>Measuring to ensure updates are a success</li>
+                      <li>And much more!</li>
+                     </ul> -->
+                  <div>
+                     <div class="flex justify-start items-start md:items-center mb-2">
+                        <img src="./assets/images/icon-list.svg" alt="" class="me-3">
+                        <p class="text-base">Product discovery and building what matters</p>
+                     </div>
+                     <div class="flex justify-start items-start md:items-center mb-2">
+                        <img src="./assets/images/icon-list.svg" alt="" class="me-3">
+                        <p class="text-base">Measuring to ensure updates are a success</p>
+                     </div>
+                     <div class="flex justify-start items-start md:items-center mb-2" >
+                        <img src="./assets/images/icon-list.svg" alt="" class="me-3">
+                        <p class="text-base">And much more!</p>
+                     </div>
+                  </div>
+                  <!-- <div class="mt-5">
+                     <label for="email" class="font-semibold mb-2 block">Email address</label>
+                     <input id="email" type="email" name="email" required placeholder="you@example.com" class="w-full border border-gray-700 px-3 py-2 rounded"/>
+                     </div> -->
+                  <div class="mt-10">
+                     <div class="flex justify-between items-center mb-2 ">
+                        <label for="email" class="block text-xs font- text-gray-900 dark:text-white">Email address</label>
+                        <small class="text-red-400 text-sm font-bold invisible error-message">
+                           Email is required
+                        </small>
+                     </div>
+                     <input type="email" id="newsletter_email" class=" border border-gray-300 border-2 text-gray-900 text-sm rounded-lg  block w-full p-5 dark:bg-gray-700 focus:outline-none dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="email@company.com"  required>
+                  </div>
+                  <button type="button" class=" mt-5 text-white bg-gray-800 w-full hover:bg-tomato hover:shadow-xl focus:outline-none  font-medium rounded-lg text-sm p-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" id="newsletter_button"> Subscribe to monthly newsletter</button>
+               </div>
+               <!-- /Sign-up form end  -->
+               <div  class="ms-auto hidden md:flex w-[40%]" >
+                  <img src="./assets/images/illustration-sign-up-desktop.svg" alt="" class="w-full h-full sca">
+               </div>
+            </section>
+            <!-- translate-x-[120%]   /success message starts-->
+            <section class="newsletter-success h-full my-auto absolute top-0  left-0 transition flex flex-col translate-x-[120%]  justify-between md:justify-center duration-1000 p-5 md:p-16">
+               <div class="mt-56 md:mt-0">
+                  <div><img src="./assets/images/icon-success.svg" alt=""></div>
+                  <h1 class="text-4xl md:text-7xl font-bold mt-5 md:mt-10">Thanks for subscribing!</h1>
+                  <p class="mt-10">A confirmation email has been sent to <span class="font-extrabold mt-10">ash@loremcompany.com.</span> 
+                     Please open it and click the button inside to confirm your subscription.
+                  </p>
+               </div>
+               <button type="button" class="  md:mt-10 text-white bg-gray-800 w-full hover:bg-tomato hover:shadow-xl hover:shadow-tomato/50 focus:outline-none  font-medium rounded-lg text-sm p-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"  id="newsletter_dismiss"> Dismiss message</button>
+            </section>
+            <!-- /success message ends -->
+         </div>
+      </main>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+         tailwind.config = {
+           theme: {
+             extend: {
+               listStyleImage: {
+             checkmark: 'url("./assets/images/icon-list.svg")',
+           },
+           transitionProperty: {
+              'width': 'width',
+             },
+               colors: {
+                 clifford: '#36394c',
+                 tomato:'#FF6257'
+               }
+             }
+           }
+         }
+      </script>
+      <script src="./public/js/tailwind.js"></script>
+      <script src="./public/js/jquery.js"></script>
+      <script src="./public/js/custom.js"></script>
+   </body>
+</html>
